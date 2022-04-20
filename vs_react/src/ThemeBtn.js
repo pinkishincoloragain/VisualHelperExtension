@@ -3,12 +3,12 @@ import { useState } from "react";
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 
-const ThemeBtn = ({ theme, setTheme }) => {
+const ThemeBtn = ({ darkMode, setDarkMode }) => {
   const [checked, setChecked] = useState(false);
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
-    setTheme(event.target.checked ? "dark" : "light");
+    setDarkMode(event.target.checked ? true : false);
   };
 
   return (
@@ -20,16 +20,16 @@ const ThemeBtn = ({ theme, setTheme }) => {
         // justifyContent: "center",
         width: "200px",
         height: "40px",
-        mt: "20px",
+        my: "10px",
       }}
     >
       <Typography
         variant="h5"
         sx={{
-          color: theme === "light" ? "black" : "white",
+          color: darkMode === false ? "black" : "white",
         }}
       >
-        fish
+        Dark mode
       </Typography>
       <Checkbox
         checked={checked}
