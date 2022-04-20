@@ -1,23 +1,45 @@
-import "./App.css";
+import { Box, Button } from "@mui/material";
+import { useState } from "react";
+import ThemeBtn from "./ThemeBtn";
 
 function App() {
+  const [theme, setTheme] = useState("light");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Box
+      className="App"
+      sx={{
+        width: "400px",
+        height: "500px",
+        px: "20px",
+        py: "20px",
+        backgroundColor: theme === "light" ? "white" : "black",
+      }}
+    >
+      <Box
+        sx={{
+          borderRadius: "10px",
+          border: "1px double white",
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Button
+          style={{
+            width: "100px",
+            heigth: "20px",
+            backgroundColor: theme === "light" ? "black" : "white",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          fish
+        </Button>
+        <ThemeBtn theme={theme} setTheme={setTheme} />
+      </Box>
+    </Box>
   );
 }
 
