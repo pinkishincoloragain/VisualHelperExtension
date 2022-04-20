@@ -1,0 +1,16 @@
+{
+  "name": "Strong Password Generator",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "description": "Strong password generator",
+  "icons": {
+    "16": "images/VH_16.ico",
+    "32": "images/VH_32.ico",
+    "48": "images/VH_48.ico",
+    "128": "images/VH_128.ico"
+  },
+  "action": {
+    "default_icon": "images/VH_128.ico",
+    "default_popup": "popup.html"
+  }
+}
