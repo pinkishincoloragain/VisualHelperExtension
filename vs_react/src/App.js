@@ -4,23 +4,21 @@ import ThemeBtn from "./ThemeBtn";
 import FilterBtn from "./FilterBtn";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
-
   return (
     <Box
       className="App"
       sx={{
         width: "400px",
-        height: "500px",
+        height: "200px",
         px: "20px",
         py: "20px",
-        backgroundColor: darkMode === false ? "white" : "black",
+        backgroundColor: "white",
       }}
     >
       <Box
         sx={{
           borderRadius: "10px",
-          border: "1px double white",
+          border: "5px solid black",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -29,12 +27,22 @@ function App() {
           justifyContent: "center",
         }}
       >
-        <Box sx={{ display: "flex", flexDirection: "column" }}>
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <FilterBtn />
+
           <Button
             style={{
               width: "200px",
               // heigth: "60px",
-              backgroundColor: darkMode === false ? "black" : "white",
+              backgroundColor: "black",
+              color: "white",
             }}
             onClick={() => {
               window.open(
@@ -45,8 +53,6 @@ function App() {
           >
             Configure filter
           </Button>
-          <FilterBtn darkMode={darkMode} />
-          <ThemeBtn darkMode={darkMode} setDarkMode={setDarkMode} />
         </Box>
       </Box>
     </Box>
