@@ -13,31 +13,6 @@ function App() {
   const [message, setMessage] = useState("");
   const [open, setOpen] = useState(false);
 
-  // useEffect(() => {
-  //   chrome.storage.sync.set({ color });
-  //   console.log("Default background color set to %cgreen", `color: ${color}`);
-
-  //   chrome.runtime.onMessage.addListener((message) => {
-  //     setMessage(message.value);
-  //     if (message.value === "openPopup") {
-  //       setOpen(true);
-  //     }
-  //   });
-  // });
-
-  // function setPageBackgroundColor() {
-  //   chrome.storage.sync.get("color", ({ color }) => {
-  //     document.body.style.backgroundColor = color;
-  //   });
-  // }
-
-  // useEffect(() => {
-  //   chrome.scripting.executeScript({
-  //     target: { tabId: tab.id, allFrames: true },
-  //     function: setPageBackgroundColor,
-  //   });
-  // }, [filterOn]);
-
   return (
     <Box
       className="App"
