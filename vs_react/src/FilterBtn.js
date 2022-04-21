@@ -1,13 +1,36 @@
 import { useState } from "react";
 import Switch from "@mui/material/Switch";
 import { Box, Typography } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
 
-export default function FilterBtn() {
+export default function FilterBtn(props) {
   const [checked, setChecked] = useState(false);
 
-  const handleChange = (e) => {
-    setChecked(e.target.checked);
+  const handleChange = () => {
+    setChecked(!checked);
+    props.setFilterOn(!checked);
   };
+
+  const MaterialUISwitch = styled(Switch)(({ theme }) => ({
+    width: 80,
+    height: 40,
+    padding: 0,
+    borderRadius: "60px",
+    "& .MuiSwitch-switchBase": {
+      margin: 0,
+      paddingTop: 5,
+      "&.Mui-checked": {
+        color: "#fff",
+        transform: "translateX(35px)",
+      },
+    },
+    "& .MuiSwitch-thumb": {
+      height: "30px",
+      width: "30px",
+    },
+  }));
 
   return (
     <>
@@ -18,11 +41,11 @@ export default function FilterBtn() {
           alignItems: "center",
         }}
       >
-        <Typography>Fish</Typography>
-        <Switch
+        <FormControlLabel
+          control={<MaterialUISwitch sx={{ m: 1 }} />}
+          label="Filter button"
+          onClick={handleChange}
           checked={checked}
-          onChange={handleChange}
-          inputProps={{ "aria-label": "controlled" }}
         />
       </Box>
     </>

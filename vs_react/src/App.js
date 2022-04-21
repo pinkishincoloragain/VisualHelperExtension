@@ -1,15 +1,17 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { useState } from "react";
 import ThemeBtn from "./ThemeBtn";
 import FilterBtn from "./FilterBtn";
 
 function App() {
+  const [filterOn, setFilterOn] = useState(false);
+
   return (
     <Box
       className="App"
       sx={{
         width: "400px",
-        height: "200px",
+        height: "100px",
         px: "20px",
         py: "20px",
         backgroundColor: "white",
@@ -18,25 +20,34 @@ function App() {
       <Box
         sx={{
           borderRadius: "10px",
-          border: "5px solid black",
+          // border: "5px solid black",
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
+          flexDirection: "row",
         }}
       >
+        <Typography
+          variant="h1"
+          sx={{
+            color: "black",
+            ml: "20px",
+            width: "160px",
+            flex: "1",
+          }}
+        >
+          {filterOn ? "On" : "Off"}
+        </Typography>
         <Box
           sx={{
             width: "100%",
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
+            flex: "1",
           }}
         >
-          <FilterBtn />
-
+          <FilterBtn setFilterOn={setFilterOn} />
           <Button
             style={{
               width: "200px",
