@@ -43,7 +43,7 @@ export default function FilterBtn(props) {
       >
         <FormControlLabel
           control={<MaterialUISwitch sx={{ m: 1 }} />}
-          label="Filter button"
+          label={checked ? "Filter on" : "Filter off"}
           onClick={handleChange}
           checked={checked}
         />

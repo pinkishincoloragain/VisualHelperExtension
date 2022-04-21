@@ -1,10 +1,42 @@
+/*global chrome*/
+
 import { Box, Button, Typography } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ThemeBtn from "./ThemeBtn";
 import FilterBtn from "./FilterBtn";
 
 function App() {
+  let color = "#3aa757";
+  // let [tab] = chrome.tabs.query({ active: true, currentWindow: true });
+
   const [filterOn, setFilterOn] = useState(false);
+  const [message, setMessage] = useState("");
+  const [open, setOpen] = useState(false);
+
+  // useEffect(() => {
+  //   chrome.storage.sync.set({ color });
+  //   console.log("Default background color set to %cgreen", `color: ${color}`);
+
+  //   chrome.runtime.onMessage.addListener((message) => {
+  //     setMessage(message.value);
+  //     if (message.value === "openPopup") {
+  //       setOpen(true);
+  //     }
+  //   });
+  // });
+
+  // function setPageBackgroundColor() {
+  //   chrome.storage.sync.get("color", ({ color }) => {
+  //     document.body.style.backgroundColor = color;
+  //   });
+  // }
+
+  // useEffect(() => {
+  //   chrome.scripting.executeScript({
+  //     target: { tabId: tab.id, allFrames: true },
+  //     function: setPageBackgroundColor,
+  //   });
+  // }, [filterOn]);
 
   return (
     <Box

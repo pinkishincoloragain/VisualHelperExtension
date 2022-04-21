@@ -4,9 +4,9 @@
   "version": "0.1",
   "description": "Web transformer chrome extension",
   "background": {
-    "service_worker": "./background.js"
+    "service_worker": "background.js"
   },
-  "permissions": [],
+  "permissions": ["storage"],
   "author": "Myungbin Son",
   "homepage_url": "https://github.com/pinkishincoloragain/",
   "short_name": "VH",
