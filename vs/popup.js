@@ -28,17 +28,26 @@ const changeAttributes = () => {
     div.style.zIndex = "9999";
     div.style.backgroundColor = color;
     div.textContent = "Injected!";
-    document.body.appendChild(div);
+    // document.body.appendChild(div);
 
     alert("background inserted");
 
     document.body.style.backgroundColor = color;
-    document.body.style.color = "red";
+
+    // document.body.style.color = "red";
     document.querySelector("span").style.color = "blue";
     document.querySelector("div").style.borderWidth = "20px";
+
+    let divs = document.getElementsByTagName("div");
+    let spans = document.getElementsByTagName("span");
+    // let singleDiv = null;
+    console.log(divs.length);
+    for (let i = 0; i < divs.length; i++) {
+      divs.item(i).style.border = "1px solid red";
+      divs.item(i).style.borderRadius = "20px";
+      // divs.item(i).style.display = "none";
+    }
   });
 };
 
-(function () {
-  // just place a div at top right
-})();
+(function () {})();
