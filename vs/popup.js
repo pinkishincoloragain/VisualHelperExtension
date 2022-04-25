@@ -40,6 +40,19 @@ const preset1 = () => {
   chrome.storage.sync.get("color", ({ color }) => {
     document.body.style.backgroundColor = "black";
     // document.body.style.color = "red";
+    let h1s = document.getElementsByTagName("h1");
+    let h2s = document.getElementsByTagName("h2");
+    let h3s = document.getElementsByTagName("h3");
+    let h4s = document.getElementsByTagName("h4");
+    let h5s = document.getElementsByTagName("h5");
+    let h6s = document.getElementsByTagName("h6");
+    document.body.classList.add("VS");
+
+    for (i = 0; i < h1s.length; i++) {
+      console.log(divs[i].setAttribute("background-color", "black !important"));
+      h1s.item(i).classList.add("VS");
+    }
+
     let divs = document.getElementsByTagName("div");
     let spans = document.getElementsByTagName("span");
     let ps = document.getElementsByTagName("p");
@@ -49,6 +62,14 @@ const preset1 = () => {
     for (i = 0; i < divs.length; i++) {
       console.log(divs[i].setAttribute("background-color", "black !important"));
       // divs.item(i).style.border = "1px solid red";
+    }
+    for (let i = 0; i < ps.length; i++) {
+      ps.item(i).style.color = "white";
+      ps.item(i).style.borderRadius = "20px";
+    }
+    for (let i = 0; i < as.length; i++) {
+      as.item(i).style.color = "green";
+      as.item(i).style.borderRadius = "20px";
     }
   });
 };
