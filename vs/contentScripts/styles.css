@@ -6,6 +6,11 @@ body.VS {
   /* background-color: red !important; */
   color: "red" !important;
 }
+div.VS {
+  /* background-color: red !important; */
+  background-color: "red" !important;
+  border: 10px solid red !important;
+}
 
 span.VS {
   color: "white" !important;

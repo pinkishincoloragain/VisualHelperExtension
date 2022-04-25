@@ -6,6 +6,6 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   const afterDOMLoaded = () => {
-    // document.body.classList.add("VS");
+    document.body.classList.add("VS");
   };
 });
