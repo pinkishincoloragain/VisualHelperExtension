@@ -6,13 +6,6 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.tabs.onActivated.addListener((activeInfo) => activate(activeInfo));
 
-chrome.runtime.sendMessage(
-  { command: "fetch", data: { domain: domain } },
-  (response) => {
-    console.log(response.data, domain);
-  }
-);
-
 async function activate(activeInfo) {
   console.log("change called.");
   // try {

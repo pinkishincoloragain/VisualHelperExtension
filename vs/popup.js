@@ -49,8 +49,22 @@ const preset1 = () => {
     document.body.classList.add("VS");
 
     for (i = 0; i < h1s.length; i++) {
-      console.log(divs[i].setAttribute("background-color", "black !important"));
-      h1s.item(i).classList.add("VS");
+      h1s.item(i).style.color = "white";
+    }
+    for (i = 0; i < h2s.length; i++) {
+      h2s.item(i).style.color = "white";
+    }
+    for (i = 0; i < h3s.length; i++) {
+      h3s.item(i).style.color = "white";
+    }
+    for (i = 0; i < h4s.length; i++) {
+      h4s.item(i).style.color = "white";
+    }
+    for (i = 0; i < h5s.length; i++) {
+      h5s.item(i).style.color = "white";
+    }
+    for (i = 0; i < h6s.length; i++) {
+      h6s.item(i).style.color = "white";
     }
 
     let divs = document.getElementsByTagName("div");
@@ -60,15 +74,14 @@ const preset1 = () => {
     let lis = document.getElementsByTagName("lis");
 
     for (i = 0; i < divs.length; i++) {
-      console.log(divs[i].setAttribute("background-color", "black !important"));
-      // divs.item(i).style.border = "1px solid red";
+      divs.item(i).style.backgroundColor = "black !important";
     }
     for (let i = 0; i < ps.length; i++) {
       ps.item(i).style.color = "white";
       ps.item(i).style.borderRadius = "20px";
     }
     for (let i = 0; i < as.length; i++) {
-      as.item(i).style.color = "green";
+      as.item(i).style.color = "yellow";
       as.item(i).style.borderRadius = "20px";
     }
   });
@@ -77,11 +90,35 @@ const preset1 = () => {
 // X green X red (Deuteranopia)
 const preset2 = () => {
   chrome.storage.sync.get("color", ({ color }) => {
-    document.body.style.backgroundColor = "black";
-
+    document.body.style.backgroundColor = "white";
     // document.body.style.color = "red";
-    document.querySelector("span").style.color = "blue";
-    document.querySelector("div").style.borderWidth = "20px";
+    let h1s = document.getElementsByTagName("h1");
+    let h2s = document.getElementsByTagName("h2");
+    let h3s = document.getElementsByTagName("h3");
+    let h4s = document.getElementsByTagName("h4");
+    let h5s = document.getElementsByTagName("h5");
+    let h6s = document.getElementsByTagName("h6");
+    document.body.classList.add("VS");
+
+    for (i = 0; i < h1s.length; i++) {
+      h1s.item(i).style.color = "black";
+    }
+    for (i = 0; i < h2s.length; i++) {
+      h2s.item(i).style.color = "black";
+    }
+    for (i = 0; i < h3s.length; i++) {
+      h3s.item(i).style.color = "black";
+      s;
+    }
+    for (i = 0; i < h4s.length; i++) {
+      h4s.item(i).style.color = "black";
+    }
+    for (i = 0; i < h5s.length; i++) {
+      h5s.item(i).style.color = "black";
+    }
+    for (i = 0; i < h6s.length; i++) {
+      h6s.item(i).style.color = "black";
+    }
 
     let divs = document.getElementsByTagName("div");
     let spans = document.getElementsByTagName("span");
@@ -89,25 +126,17 @@ const preset2 = () => {
     let as = document.getElementsByTagName("as");
     let lis = document.getElementsByTagName("lis");
 
-    // for (let i = 0; i < divs.length; i++) {
-    //   divs.item(i).style.border = "1px solid red";
-    //   divs.item(i).style.borderRadius = "20px";
-    // }
-    // for (i = 0; i < spans.length; i++) {
-    //   spans.item(i).style.border = "1px solid red";
-    //   spans.item(i).style.borderRadius = "20px";
-    // }
-    for (i = 0; i < ps.length; i++) {
-      // ps.item(i).style.border = "1px solid red";
-      ps.item(i).style.borderRadius = "20px";
-      ps.item(i).parentElement.style.filter = "saturate(100)";
+    for (i = 0; i < divs.length; i++) {
+      divs.item(i).style.backgroundColor = "white !important";
     }
-    // for (i = 0; i < as.length; i++) {
-    //   as.item(i).style.color = "red !important";
-    // }
-    // for (i = 0; i < lis.length; i++) {
-    //   lis.item(i).style.color = "red !important";
-    // }
+    for (let i = 0; i < ps.length; i++) {
+      ps.item(i).style.color = "black";
+      ps.item(i).style.borderRadius = "20px";
+    }
+    for (let i = 0; i < as.length; i++) {
+      as.item(i).style.color = "yellow";
+      as.item(i).style.borderRadius = "20px";
+    }
   });
 };
 
