@@ -13,12 +13,15 @@ chrome.storage.sync.get("color", ({ color }) => {
 changeColor.addEventListener("click", async () => {
   chrome.scripting.executeScript({
     target: { tabId: tab.id, allFrames: true },
-    function: setPageBackgroundColor,
+    function: changeAttributes,
   });
 });
 
-const setPageBackgroundColor = () => {
+const changeAttributes = () => {
   chrome.storage.sync.get("color", ({ color }) => {
     document.body.style.backgroundColor = color;
+    document.body.style.color = "red";
+    document.querySelector("span").style.color = "blue";
+    document.querySelector("div").style.borderWidth = "20px";
   });
 };
